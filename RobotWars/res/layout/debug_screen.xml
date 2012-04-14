@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <EditText
+        android:id="@+id/input3"
+        android:layout_width="1150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ipAddress"
+        android:layout_marginTop="200dp"
+        android:height="20dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/sendallButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/input3"
+        android:layout_marginTop="28dp"
+        android:text="Send All"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sendallButton"
+        android:layout_marginTop="65dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/eyepee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="65dp"
+        android:text="IP Address"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/moveForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input3"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/sendallButton"
+        android:text="Forward"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/moveRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/moveForward"
+        android:layout_toRightOf="@+id/moveForward"
+        android:text="Right"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/moveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/moveRight"
+        android:layout_alignBottom="@+id/moveRight"
+        android:layout_alignRight="@+id/moveForward"
+        android:layout_marginRight="121dp"
+        android:text="Left"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/moveBackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/moveForward"
+        android:layout_below="@+id/moveRight"
+        android:text="Backward"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/leftRotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/moveForward"
+        android:layout_alignBottom="@+id/moveForward"
+        android:layout_marginLeft="600dp"
+        android:text="Left Rotation"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/rightRotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignLeft="@+id/leftRotation"
+        android:text="Right Rotation"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/sendButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/moveForward"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:text="Send"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/input2"
+        android:layout_width="1150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sendButton3"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:height="20dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/sendButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sendButton3"
+        android:layout_alignTop="@+id/input2"
+        android:text="Send"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/sendButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sendButton2"
+        android:layout_alignLeft="@+id/sendButton2"
+        android:layout_marginBottom="22dp"
+        android:text="Send"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/input1"
+        android:layout_width="1150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/sendButton1"
+        android:ems="10"
+        android:height="20dp"
+        android:textSize="20dp" >
+
+        <requestFocus />
+
+    </EditText>
+
+</RelativeLayout>
