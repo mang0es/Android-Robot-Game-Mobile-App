@@ -1,7 +1,6 @@
 package com.cmpe195.SeniorProject.AndroidApp;
 
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+
 public class ConfigScreen extends Activity {
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,8 @@ public class ConfigScreen extends Activity {
 		connectButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startDebugScreen();	
+				startDebugScreen();
+				//finish();
 			}
 		});
 		
@@ -29,7 +32,8 @@ public class ConfigScreen extends Activity {
 		gameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startGameScreen();	
+				startGameScreen();
+				//finish();
 			}
 		});
 		
@@ -37,7 +41,8 @@ public class ConfigScreen extends Activity {
 		ssc.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startGreggles();	
+				startGreggles();
+				//finish();
 			}
 		});
 			
@@ -134,6 +139,7 @@ public class ConfigScreen extends Activity {
  			search.putExtras(bundle);
  			
  			startActivity(search);
+ 			
 			}
  		}
  		catch (ActivityNotFoundException afne)
@@ -147,7 +153,7 @@ public class ConfigScreen extends Activity {
  		try{
  			Intent search = new Intent(this, Greggles.class);
  			
- 			startActivity(search);	
+ 			startActivity(search); 			
  		}
  		catch (ActivityNotFoundException afne)
  		{

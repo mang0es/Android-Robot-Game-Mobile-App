@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.cmpe195.SeniorProject.AndroidApp.robot.Robot;
@@ -65,6 +66,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		Log.d(TAG, "Surface is being destroyed");
 		// tell the thread to shut down and wait for it to finish; this is a clean shutdown
 		boolean retry = true;
+		thread.setRunning(false);
 		while (retry) {
 		try {
 			thread.join();
@@ -112,6 +114,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	             } catch (IOException e) {
 	            	 e.printStackTrace();
 	             }
+	        	 
+	        	 
 	        }
 	        if (robot2.isTouched()) 
 	        {    	
@@ -158,6 +162,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	            // robot1 was picked up and is being dragged
 	            robot1.setX((int)event.getX());
 	            robot1.setY((int)event.getY());
+	            
 	        }
 	        else if (robot2.isTouched()) 
 	        {
@@ -192,7 +197,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 } catch (IOException e) {
                 	e.printStackTrace();
                 }
-                
             }
             else if (robot2.isTouched()) {
                 robot2.setTouched(false);
@@ -253,4 +257,5 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		robot4.draw(canvas);
 	}
 	
+
 }

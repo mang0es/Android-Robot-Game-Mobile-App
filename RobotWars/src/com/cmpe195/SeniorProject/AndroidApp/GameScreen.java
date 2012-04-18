@@ -1,15 +1,20 @@
 package com.cmpe195.SeniorProject.AndroidApp;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -19,13 +24,17 @@ import android.widget.Toast;
 
 import com.cmpe195.SeniorProject.AndroidApp.robot.Robot;
 
-public class GameScreen extends Activity{
+public class GameScreen extends Activity {
 
+	private boolean connected = false;
 	GamePanel gamepanel;
 	Socket socket;
 	GameScreen gameScreen = this;
 	
 	private static final String TAG = GameScreen.class.getSimpleName();
+	public static int portNumber = 0;
+	public static String ipAddress = null;
+	public static String input = null;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,23 +52,67 @@ public class GameScreen extends Activity{
         // get bundle (from ConfigScreen)
         Bundle bundle = getIntent().getExtras();
         // extract bundle
-        String ipAddress = bundle.getString("ipAddress");
-        int port = bundle.getInt("port");
-          
-        try {
-			openSocket(ipAddress, port);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+        ipAddress = bundle.getString("ipAddress");
+        portNumber = bundle.getInt("port");
+
+        // TCP client
+		if(!connected)
+		{
+		   	Thread client = new Thread(new ClientThread());
+		    Toast.makeText(this, "Opening Socket...", Toast.LENGTH_LONG).show();
+		    client.start();        		
 		}
             
         gamepanel = new GamePanel(this);
         //gamepanel.setZOrderOnTop(true);
         setContentView(gamepanel);
         Log.d(TAG, "View added");
-        Toast.makeText(this, "Opening Socket...", Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Opening Socket...", Toast.LENGTH_LONG).show();
+        
+	}
+
+	// TCP client thread
+	public class ClientThread implements Runnable {
+
+		@Override
+		public void run() {
+			Log.d(TAG, "Opening socket");
+			try {
+				InetAddress serverAddr = InetAddress.getByName(ipAddress);
+				socket = new Socket(serverAddr, portNumber);
+				connected = true;
+				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+				while(connected)
+				{
+					try {
+						if(socket.isClosed() == false)
+						{
+							input = in.readLine();
+							Log.d(TAG, "Received: " + input);
+						}
+						else
+						{
+							connected = false;
+						}
+					}
+					catch (SocketException e) {
+						e.printStackTrace();
+					}
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				connected = false;
+			}
+		}
+		
 	}
 	
+	
+	/*
 	public void openSocket(String ipAddress, int portNumber) throws IOException
 	{
 		// hardcoded IP and Port:
@@ -70,7 +123,7 @@ public class GameScreen extends Activity{
 		InetAddress serverAddr = InetAddress.getByName(ipAddress);
 		socket = new Socket(serverAddr, portNumber);
 	}
-	
+	*/
 	public void sendData(String message) throws IOException
 	{
 		PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
@@ -97,13 +150,17 @@ public class GameScreen extends Activity{
 		       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
 		        	   try {
-		        		   socket.close();
-		        		   Log.d(TAG, "Closing Socket...");
-		        	   } catch (IOException e) {
-		        		   // TODO Auto-generated catch block
-		        		   e.printStackTrace();
-		        	   }
-		        	   GameScreen.this.finish();
+						socket.close();
+						if(socket.isClosed() == true)
+						{
+						    Toast.makeText(getApplicationContext(), "Socket closed...", Toast.LENGTH_LONG).show();
+						}
+					   }
+		        	   catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					   }
+		        	finish();
 		           }
 		       })
 		       .setNegativeButton("No", new DialogInterface.OnClickListener() {

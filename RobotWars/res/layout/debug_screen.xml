@@ -55,51 +55,12 @@
         android:textSize="30dp" />
 
     <Button
-        android:id="@+id/moveRight"
+        android:id="@+id/rightRotation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/moveForward"
         android:layout_toRightOf="@+id/moveForward"
-        android:text="Right"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/moveLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/moveRight"
-        android:layout_alignBottom="@+id/moveRight"
-        android:layout_alignRight="@+id/moveForward"
-        android:layout_marginRight="121dp"
-        android:text="Left"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/moveBackward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/moveForward"
-        android:layout_below="@+id/moveRight"
-        android:text="Backward"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/leftRotation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/moveForward"
-        android:layout_alignBottom="@+id/moveForward"
-        android:layout_marginLeft="600dp"
-        android:text="Left Rotation"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/rightRotation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignLeft="@+id/leftRotation"
-        android:text="Right Rotation"
+        android:text="Rotate Right"
         android:textSize="30dp" />
 
     <Button
@@ -155,5 +116,34 @@
         <requestFocus />
 
     </EditText>
+
+    <Button
+        android:id="@+id/shootLaser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendallButton"
+        android:layout_marginLeft="72dp"
+        android:layout_toRightOf="@+id/rightRotation"
+        android:text="Shoot Laser!"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/moveBackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/moveForward"
+        android:layout_below="@+id/rightRotation"
+        android:text="Backward"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/leftRotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rightRotation"
+        android:layout_alignBottom="@+id/rightRotation"
+        android:layout_toLeftOf="@+id/moveBackward"
+        android:text="Rotate Left"
+        android:textSize="30dp" />
 
 </RelativeLayout>

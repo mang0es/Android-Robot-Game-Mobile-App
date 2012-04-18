@@ -11,6 +11,7 @@ import java.net.UnknownHostException;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,8 @@ public class DebugScreen extends Activity{
 	private Button sendButton2;
 	private Button sendButton3;
 	private Button sendButtonALL;
+	
+	private Button shootLaser;
 	
 	private TextView textView;
 	
@@ -51,11 +54,13 @@ public class DebugScreen extends Activity{
         sendButton3 = (Button) findViewById(R.id.sendButton3);
         sendButtonALL = (Button) findViewById(R.id.sendallButton);
         
+        shootLaser = (Button) findViewById(R.id.shootLaser);
+        
         eyepee = (TextView) findViewById(R.id.eyepee);
         
         upButton = (Button) findViewById(R.id.moveForward);
-        leftButton = (Button) findViewById(R.id.moveLeft);
-        rightButton = (Button) findViewById(R.id.moveRight);
+//        leftButton = (Button) findViewById(R.id.moveLeft);
+//        rightButton = (Button) findViewById(R.id.moveRight);
         downButton = (Button) findViewById(R.id.moveBackward);
         leftRotationButton = (Button) findViewById(R.id.leftRotation);
         rightRotationButton = (Button) findViewById(R.id.rightRotation);
@@ -210,7 +215,7 @@ public class DebugScreen extends Activity{
             }
         });
         
-        // move Robot to the left
+  /*      // move Robot to the left
         leftButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                try {
@@ -230,8 +235,8 @@ public class DebugScreen extends Activity{
                }
             }
         });
-        
-        // move Robot to the right
+   */     
+  /*      // move Robot to the right
         rightButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                try {
@@ -251,7 +256,7 @@ public class DebugScreen extends Activity{
                }
             }
         });
-        
+  */      
         // move Robot backward (down)
        downButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -315,6 +320,27 @@ public class DebugScreen extends Activity{
             }
         });
         
+       // shoot laser
+       shootLaser.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+               try {
+                  String str = "dbg:000:000:lsr:001:00a:000:000:000:";
+                  PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+                  out.println(str);
+                  Log.d("Client", "Client sent message");
+               } catch (UnknownHostException e) {
+                  textView.setText("Error1");
+                  e.printStackTrace();
+               } catch (IOException e) {
+                  textView.setText("Error2");
+                  e.printStackTrace();
+               } catch (Exception e) {
+                  textView.setText("Error3");
+                  e.printStackTrace();
+               }
+            }
+        });
+ 
     }
 
 }
