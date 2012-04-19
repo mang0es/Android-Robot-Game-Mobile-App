@@ -8,6 +8,9 @@
 package com.cmpe195.SeniorProject.AndroidApp;
 
 public final class R {
+    public static final class anim {
+        public static final int rotate=0x7f040000;
+    }
     public static final class attr {
     }
     public static final class drawable {
@@ -21,84 +24,84 @@ public final class R {
         public static final int robot_teal=0x7f020007;
     }
     public static final class id {
-        public static final int Acknowledgments=0x7f070010;
-        public static final int Advisor=0x7f07000e;
-        public static final int Alarcon=0x7f070012;
-        public static final int Allen=0x7f07000c;
-        public static final int Bajet=0x7f07002a;
-        public static final int Barrett=0x7f070013;
-        public static final int Bindal=0x7f070014;
-        public static final int BlankSpace=0x7f070039;
-        public static final int Bonk=0x7f070038;
-        public static final int Brigitte=0x7f07000a;
-        public static final int Chang=0x7f07002c;
-        public static final int Chen=0x7f070015;
-        public static final int Chu=0x7f07002b;
-        public static final int Chung=0x7f07002d;
-        public static final int Cirimele=0x7f070016;
-        public static final int ConfigButton=0x7f070049;
-        public static final int CreditsButton=0x7f07004a;
-        public static final int Dhaliwal=0x7f070017;
-        public static final int Enriquez=0x7f07002e;
-        public static final int FacultyMembers=0x7f070011;
-        public static final int Fatoohi=0x7f070018;
-        public static final int Felix=0x7f07000b;
-        public static final int Furman=0x7f070019;
-        public static final int Gomez=0x7f07001b;
-        public static final int HalukOzemek=0x7f07000f;
-        public static final int Hsu=0x7f07001c;
-        public static final int Hung=0x7f07001d;
-        public static final int Jones=0x7f07001e;
-        public static final int Kang=0x7f07001f;
-        public static final int Keralapura=0x7f07001a;
-        public static final int Kim=0x7f07002f;
-        public static final int Li=0x7f070020;
-        public static final int Lin=0x7f070021;
-        public static final int Music=0x7f070036;
-        public static final int Nnaji=0x7f070030;
-        public static final int Ozemek=0x7f070022;
-        public static final int Prasad=0x7f070031;
-        public static final int Ratner=0x7f070032;
-        public static final int Reischl=0x7f070023;
-        public static final int Robinson=0x7f070024;
-        public static final int SJSU_CmpE=0x7f070008;
-        public static final int Say=0x7f070025;
-        public static final int Serena=0x7f07000d;
-        public static final int Shim=0x7f070026;
-        public static final int StarshipAmazing=0x7f070037;
-        public static final int StudentsClassmates=0x7f070029;
-        public static final int TeamMembers=0x7f070009;
-        public static final int Trinh=0x7f070033;
-        public static final int Tugangui=0x7f070034;
-        public static final int Wong=0x7f070035;
-        public static final int Yu=0x7f070027;
-        public static final int Zoroofchi=0x7f070028;
-        public static final int banner=0x7f07004b;
-        public static final int cancelButton=0x7f070048;
-        public static final int debugButton=0x7f070005;
-        public static final int eyepee=0x7f07003c;
-        public static final int gameButton=0x7f070006;
-        public static final int input1=0x7f070043;
-        public static final int input2=0x7f070040;
-        public static final int input3=0x7f07003a;
-        public static final int ipAddress=0x7f070001;
-        public static final int ipAddress_input=0x7f070000;
-        public static final int leftRotation=0x7f070046;
-        public static final int moveBackward=0x7f070045;
-        public static final int moveForward=0x7f07003d;
-        public static final int portNumber=0x7f070002;
-        public static final int portNumber_input=0x7f070003;
-        public static final int press2continue=0x7f07004c;
-        public static final int rightRotation=0x7f07003e;
-        public static final int sendButton1=0x7f070042;
-        public static final int sendButton2=0x7f070041;
-        public static final int sendButton3=0x7f07003f;
-        public static final int sendCoordinates=0x7f07004d;
-        public static final int sendallButton=0x7f07003b;
-        public static final int shootLaser=0x7f070044;
-        public static final int ssc=0x7f070007;
-        public static final int startButton=0x7f070047;
-        public static final int textView=0x7f070004;
+        public static final int Acknowledgments=0x7f080010;
+        public static final int Advisor=0x7f08000e;
+        public static final int Alarcon=0x7f080012;
+        public static final int Allen=0x7f08000c;
+        public static final int Bajet=0x7f08002a;
+        public static final int Barrett=0x7f080013;
+        public static final int Bindal=0x7f080014;
+        public static final int BlankSpace=0x7f080039;
+        public static final int Bonk=0x7f080038;
+        public static final int Brigitte=0x7f08000a;
+        public static final int Chang=0x7f08002c;
+        public static final int Chen=0x7f080015;
+        public static final int Chu=0x7f08002b;
+        public static final int Chung=0x7f08002d;
+        public static final int Cirimele=0x7f080016;
+        public static final int ConfigButton=0x7f080049;
+        public static final int CreditsButton=0x7f08004a;
+        public static final int Dhaliwal=0x7f080017;
+        public static final int Enriquez=0x7f08002e;
+        public static final int FacultyMembers=0x7f080011;
+        public static final int Fatoohi=0x7f080018;
+        public static final int Felix=0x7f08000b;
+        public static final int Furman=0x7f080019;
+        public static final int Gomez=0x7f08001b;
+        public static final int HalukOzemek=0x7f08000f;
+        public static final int Hsu=0x7f08001c;
+        public static final int Hung=0x7f08001d;
+        public static final int Jones=0x7f08001e;
+        public static final int Kang=0x7f08001f;
+        public static final int Keralapura=0x7f08001a;
+        public static final int Kim=0x7f08002f;
+        public static final int Li=0x7f080020;
+        public static final int Lin=0x7f080021;
+        public static final int Music=0x7f080036;
+        public static final int Nnaji=0x7f080030;
+        public static final int Ozemek=0x7f080022;
+        public static final int Prasad=0x7f080031;
+        public static final int Ratner=0x7f080032;
+        public static final int Reischl=0x7f080023;
+        public static final int Robinson=0x7f080024;
+        public static final int SJSU_CmpE=0x7f080008;
+        public static final int Say=0x7f080025;
+        public static final int Serena=0x7f08000d;
+        public static final int Shim=0x7f080026;
+        public static final int StarshipAmazing=0x7f080037;
+        public static final int StudentsClassmates=0x7f080029;
+        public static final int TeamMembers=0x7f080009;
+        public static final int Trinh=0x7f080033;
+        public static final int Tugangui=0x7f080034;
+        public static final int Wong=0x7f080035;
+        public static final int Yu=0x7f080027;
+        public static final int Zoroofchi=0x7f080028;
+        public static final int banner=0x7f08004b;
+        public static final int cancelButton=0x7f080048;
+        public static final int debugButton=0x7f080005;
+        public static final int eyepee=0x7f08003c;
+        public static final int gameButton=0x7f080006;
+        public static final int input1=0x7f080043;
+        public static final int input2=0x7f080040;
+        public static final int input3=0x7f08003a;
+        public static final int ipAddress=0x7f080001;
+        public static final int ipAddress_input=0x7f080000;
+        public static final int leftRotation=0x7f080046;
+        public static final int moveBackward=0x7f080045;
+        public static final int moveForward=0x7f08003d;
+        public static final int portNumber=0x7f080002;
+        public static final int portNumber_input=0x7f080003;
+        public static final int press2continue=0x7f08004c;
+        public static final int rightRotation=0x7f08003e;
+        public static final int sendButton1=0x7f080042;
+        public static final int sendButton2=0x7f080041;
+        public static final int sendButton3=0x7f08003f;
+        public static final int sendCoordinates=0x7f08004d;
+        public static final int sendallButton=0x7f08003b;
+        public static final int shootLaser=0x7f080044;
+        public static final int ssc=0x7f080007;
+        public static final int startButton=0x7f080047;
+        public static final int textView=0x7f080004;
     }
     public static final class layout {
         public static final int config_screen=0x7f030000;
@@ -110,13 +113,13 @@ public final class R {
         public static final int start_screen=0x7f030006;
     }
     public static final class menu {
-        public static final int game_screen_options_menu=0x7f060000;
+        public static final int game_screen_options_menu=0x7f070000;
     }
     public static final class raw {
-        public static final int starshipamazing_bonk=0x7f040000;
+        public static final int starshipamazing_bonk=0x7f050000;
     }
     public static final class string {
-        public static final int app_name=0x7f050001;
-        public static final int hello=0x7f050000;
+        public static final int app_name=0x7f060001;
+        public static final int hello=0x7f060000;
     }
 }

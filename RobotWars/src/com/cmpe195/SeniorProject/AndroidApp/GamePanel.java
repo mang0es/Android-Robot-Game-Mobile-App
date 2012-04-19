@@ -49,6 +49,21 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		// make the GamePanel focusable so it can handle events
 		setFocusable(true);
 	}
+
+	
+	
+	@Override
+	public void onDraw(Canvas canvas) {
+		// BLACK fills the canvas with black
+		// TRANSPARENT shows path of the image and flickers 
+		//canvas.drawColor(Color.BLACK);
+		
+		canvas.drawBitmap(background, 0, 0, null);
+		robot1.draw(canvas);
+		robot2.draw(canvas);
+		robot3.draw(canvas);
+		robot4.draw(canvas);
+	}
 	
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
@@ -82,160 +97,161 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public boolean onTouchEvent(MotionEvent event) 
     {
 		
-	    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-	        // delegating event handling to the robot
-	        
-	        // clear touched
-	        robot1.setTouched(false);
-	        robot2.setTouched(false);
-	        robot3.setTouched(false);
-	        robot4.setTouched(false);
-	        
-	        robot1.handleActionDown((int)event.getX(), (int)event.getY());
-	        robot2.handleActionDown((int)event.getX(), (int)event.getY());
-	        robot3.handleActionDown((int)event.getX(), (int)event.getY());
-	        robot4.handleActionDown((int)event.getX(), (int)event.getY());
-	        
-	     /*   try {
-	        	gameScreen.sendData("INITPOS");
-				gameScreen.sendData("Robot 1: X:" + robot1.getX() + " Y:" + robot1.getY() );
-				gameScreen.sendData("Robot 2: X:" + robot2.getX() + " Y:" + robot2.getY() );
-				gameScreen.sendData("Robot 3: X:" + robot3.getX() + " Y:" + robot3.getY() );
-				gameScreen.sendData("Robot 4: X:" + robot4.getX() + " Y:" + robot4.getY() );
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
-			
-	        if (robot1.isTouched()) 
-	        {    	
-	        	 try {
-	        		 gameScreen.sendData("Robot 1 INITIAL - X:" + robot1.getX() + " Y:" + robot1.getY());
-	             } catch (IOException e) {
-	            	 e.printStackTrace();
-	             }
-	        	 
-	        	 
-	        }
-	        if (robot2.isTouched()) 
-	        {    	
-	        	 try {
-	        		 gameScreen.sendData("Robot 2 INITIAL - X:" + robot2.getX() + " Y:" + robot2.getY());
-	             } catch (IOException e) {
-	            	 e.printStackTrace();
-	             }
-	        } 
-	        if (robot3.isTouched()) 
-	        {    	
-	        	 try {
-	        		 gameScreen.sendData("Robot 3 INITIAL - X:" + robot3.getX() + " Y:" + robot3.getY());
-	             } catch (IOException e) {
-	            	 e.printStackTrace();
-	             }
-	        }
-	        if (robot4.isTouched()) 
-	        {    	
-	        	 try {
-	        		 gameScreen.sendData("Robot 4 INITIAL - X:" + robot4.getX() + " Y:" + robot4.getY());
-	             } catch (IOException e) {
-	            	 e.printStackTrace();
-	             }
-	        }
-	        
-	/*        // check if in the lower part of the screen we exit
-	        if (event.getY() > getHeight() - 50) 
-	        {
-	            thread.setRunning(false);
-	            ((Activity)getContext()).finish();
-	        }     else 
-	            {
-	            Log.d(TAG, "Coords: x=" + event.getX() + ",y=" + event.getY());
-	            } */
-	    }
-	    
-	    if (event.getAction() == MotionEvent.ACTION_MOVE) 
-	    {
-	        // the gestures
-	        if (robot1.isTouched()) 
-	        {    	
-	        	System.out.println("Robot 1 moving");
-	            // robot1 was picked up and is being dragged
-	            robot1.setX((int)event.getX());
-	            robot1.setY((int)event.getY());
-	            
-	        }
-	        else if (robot2.isTouched()) 
-	        {
-	            System.out.println("Robot 2 moving");
-	            // robot2 was picked up and is being dragged
-	            robot2.setX((int)event.getX());
-	            robot2.setY((int)event.getY());
-	        }
-	        else if (robot3.isTouched()) 
-	        {
-	            System.out.println("Robot 3 moving");
-	            // robot3 was picked up and is being dragged
-	            robot3.setX((int)event.getX());
-	            robot3.setY((int)event.getY());
-	        }
-	        else if (robot4.isTouched()) 
-	        {
-	            System.out.println("Robot 4 moving");
-	            // robot4 was picked up and is being dragged
-	            robot4.setX((int)event.getX());
-	            robot4.setY((int)event.getY());
-	        }
-	    } 
-	    
-	    if (event.getAction() == MotionEvent.ACTION_UP) 
-	    {
-            // touch was released
-            if (robot1.isTouched()) {
-                robot1.setTouched(false);
-                try {
-                	gameScreen.sendData("Robot 1 FINAL - X:" + robot1.getX() + " Y:" + robot1.getY());
-                } catch (IOException e) {
-                	e.printStackTrace();
-                }
-            }
-            else if (robot2.isTouched()) {
-                robot2.setTouched(false);
-                try {
-                	gameScreen.sendData("Robot 2 FINAL - X:" + robot2.getX() + " Y:" + robot2.getY());
-                } catch (IOException e) {
-                	e.printStackTrace();
-                }
-            }
-            else if (robot3.isTouched()) {
-                robot3.setTouched(false);
-                try {
-                	gameScreen.sendData("Robot 3 FINAL - X:" + robot3.getX() + " Y:" + robot3.getY());
-                } catch (IOException e) {
-                	e.printStackTrace();
-                }
-            }
-            else if (robot4.isTouched()) {
-                robot4.setTouched(false);
-                try {
-                	gameScreen.sendData("Robot 4 FINAL - X:" + robot4.getX() + " Y:" + robot4.getY());
-                } catch (IOException e) {
-                	e.printStackTrace();
-                }
-            }
-            
-         /*   try {
-            	gameScreen.sendData("FINALPOS");
+		int action = event.getAction();
+		   switch(action) {
+		   case MotionEvent.ACTION_DOWN:
+	        	System.out.println("ACTION_DOWN");
+		    	
+		    	// delegating event handling to the robot
+		        
+		        // clear touched
+	        	/*
+		        robot1.setTouched(false);
+		        robot2.setTouched(false);
+		        robot3.setTouched(false);
+		        robot4.setTouched(false);
+		        */
+		        
+		        
+		        robot1.handleActionDown((int)event.getX(), (int)event.getY());
+		        robot2.handleActionDown((int)event.getX(), (int)event.getY());
+		        robot3.handleActionDown((int)event.getX(), (int)event.getY());
+		        robot4.handleActionDown((int)event.getX(), (int)event.getY());
+		        
+		        /*
+		        try {
+            	gameScreen.sendData("INITIAL");
     			gameScreen.sendData("Robot 1: X:" + robot1.getX() + " Y:" + robot1.getY() );
     			gameScreen.sendData("Robot 2: X:" + robot2.getX() + " Y:" + robot2.getY() );
     			gameScreen.sendData("Robot 3: X:" + robot3.getX() + " Y:" + robot3.getY() );
     			gameScreen.sendData("Robot 4: X:" + robot4.getX() + " Y:" + robot4.getY() );
-    		} catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}*/
-	    }
-	    
-	    return true;
+	    		} catch (IOException e) {
+	    			// TODO Auto-generated catch block
+	    			e.printStackTrace();
+	    		}
+		        */
+		        
+		        if (robot1.isTouched()) 
+		        {    	
+		        	 try {
+		        		 gameScreen.sendData("Robot 1 INITIAL - X:" + robot1.getX() + " Y:" + robot1.getY());
+		             } catch (IOException e) {
+		            	 e.printStackTrace();
+		             }
+		        }
+		        else if (robot2.isTouched()) 
+		        {    	
+		        	 try {
+		        		 gameScreen.sendData("Robot 2 INITIAL - X:" + robot2.getX() + " Y:" + robot2.getY());
+		             } catch (IOException e) {
+		            	 e.printStackTrace();
+		             }
+		        }
+		        else if (robot3.isTouched()) 
+		        {    	
+		        	 try {
+		        		 gameScreen.sendData("Robot 3 INITIAL - X:" + robot3.getX() + " Y:" + robot3.getY());
+		             } catch (IOException e) {
+		            	 e.printStackTrace();
+		             }
+		        }
+		        else if (robot4.isTouched()) 
+		        {    	
+		        	 try {
+		        		 gameScreen.sendData("Robot 4 INITIAL - X:" + robot4.getX() + " Y:" + robot4.getY());
+		             } catch (IOException e) {
+		            	 e.printStackTrace();
+		             }
+		        }
+		        
+		    break;
+		   case MotionEvent.ACTION_MOVE:
+			   
+			   // the gestures
+		        if (robot1.isTouched()) 
+		        {    	
+		        	System.out.println("Robot 1 moving");
+		            // robot1 was picked up and is being dragged
+		            robot1.setX((int)event.getX());
+		            robot1.setY((int)event.getY());
+		            
+		        }
+		        else if (robot2.isTouched()) 
+		        {
+		            System.out.println("Robot 2 moving");
+		            // robot2 was picked up and is being dragged
+		            robot2.setX((int)event.getX());
+		            robot2.setY((int)event.getY());
+		        }
+		        else if (robot3.isTouched()) 
+		        {
+		            System.out.println("Robot 3 moving");
+		            // robot3 was picked up and is being dragged
+		            robot3.setX((int)event.getX());
+		            robot3.setY((int)event.getY());
+		        }
+		        else if (robot4.isTouched()) 
+		        {
+		            System.out.println("Robot 4 moving");
+		            // robot4 was picked up and is being dragged
+		            robot4.setX((int)event.getX());
+		            robot4.setY((int)event.getY());
+		        }
+		    break;
+		   case MotionEvent.ACTION_UP:
+			// touch was released
+	            if (robot1.isTouched()) {
+	                robot1.setTouched(false);
+	                try {
+	                	gameScreen.sendData("Robot 1 FINAL - X:" + robot1.getX() + " Y:" + robot1.getY());
+	                } catch (IOException e) {
+	                	e.printStackTrace();
+	                }
+	            }
+	            else if (robot2.isTouched()) {
+	                robot2.setTouched(false);
+	                try {
+	                	gameScreen.sendData("Robot 2 FINAL - X:" + robot2.getX() + " Y:" + robot2.getY());
+	                } catch (IOException e) {
+	                	e.printStackTrace();
+	                }
+	            }
+	            else if (robot3.isTouched()) {
+	                robot3.setTouched(false);
+	                try {
+	                	gameScreen.sendData("Robot 3 FINAL - X:" + robot3.getX() + " Y:" + robot3.getY());
+	                } catch (IOException e) {
+	                	e.printStackTrace();
+	                }
+	            }
+	            else if (robot4.isTouched()) {
+	                robot4.setTouched(false);
+	                try {
+	                	gameScreen.sendData("Robot 4 FINAL - X:" + robot4.getX() + " Y:" + robot4.getY());
+	                } catch (IOException e) {
+	                	e.printStackTrace();
+	                }
+	            }
+	            
+	         /*   try {
+	            	gameScreen.sendData("FINALPOS");
+	    			gameScreen.sendData("Robot 1: X:" + robot1.getX() + " Y:" + robot1.getY() );
+	    			gameScreen.sendData("Robot 2: X:" + robot2.getX() + " Y:" + robot2.getY() );
+	    			gameScreen.sendData("Robot 3: X:" + robot3.getX() + " Y:" + robot3.getY() );
+	    			gameScreen.sendData("Robot 4: X:" + robot4.getX() + " Y:" + robot4.getY() );
+	    		} catch (IOException e) {
+	    			// TODO Auto-generated catch block
+	    			e.printStackTrace();
+	    		}*/
+		    break;
+		   case MotionEvent.ACTION_CANCEL:
+		    break;
+		   case MotionEvent.ACTION_OUTSIDE:
+		    break;
+		   default:
+		   }
+	this.invalidate();
+	return true;
 	}
 	
 	/*public Canvas getCanvas()
@@ -244,18 +260,4 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		return new Canvas(bg);
 	}*/
 	
-	@Override
-	public void onDraw(Canvas canvas) {
-		// BLACK fills the canvas with black
-		// TRANSPARENT shows path of the image and flickers 
-		//canvas.drawColor(Color.BLACK);
-		
-		canvas.drawBitmap(background, 0, 0, null);
-		robot1.draw(canvas);
-		robot2.draw(canvas);
-		robot3.draw(canvas);
-		robot4.draw(canvas);
-	}
-	
-
 }
