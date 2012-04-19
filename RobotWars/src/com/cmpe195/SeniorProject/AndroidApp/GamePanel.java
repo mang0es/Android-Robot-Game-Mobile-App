@@ -7,12 +7,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
-import android.widget.Toast;
 
 import com.cmpe195.SeniorProject.AndroidApp.robot.Robot;
 
@@ -20,13 +17,18 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
 	private static final String TAG = GamePanel.class.getSimpleName();
 	private GameThread thread;
+	private Bitmap background;
+	GameScreen gameScreen;
+	
 	private Robot robot1;
 	private Robot robot2;
 	private Robot robot3;
 	private Robot robot4;
-	private Bitmap background;
-	GameScreen gameScreen;
 	
+	private int x_old;
+	private int y_old;
+	private int x_new;
+	private int y_new;
 	
 	public GamePanel(Context context) {
 		super(context);
@@ -133,35 +135,44 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		        
 		        if (robot1.isTouched()) 
 		        {    	
-		        	 try {
+		        	x_old = robot1.getX();
+		        	y_old = robot1.getY();
+		        	/* try {
 		        		 gameScreen.sendData("Robot 1 INITIAL - X:" + robot1.getX() + " Y:" + robot1.getY());
 		             } catch (IOException e) {
 		            	 e.printStackTrace();
-		             }
+		             }*/
 		        }
 		        else if (robot2.isTouched()) 
 		        {    	
-		        	 try {
+		        	x_old = robot2.getX();
+		        	y_old = robot2.getY();
+		        	 /*try {
 		        		 gameScreen.sendData("Robot 2 INITIAL - X:" + robot2.getX() + " Y:" + robot2.getY());
 		             } catch (IOException e) {
 		            	 e.printStackTrace();
 		             }
+		             */
 		        }
 		        else if (robot3.isTouched()) 
 		        {    	
-		        	 try {
+		        	x_old = robot3.getX();
+		        	y_old = robot3.getY();
+		        	 /*try {
 		        		 gameScreen.sendData("Robot 3 INITIAL - X:" + robot3.getX() + " Y:" + robot3.getY());
 		             } catch (IOException e) {
 		            	 e.printStackTrace();
-		             }
+		             }*/
 		        }
 		        else if (robot4.isTouched()) 
 		        {    	
-		        	 try {
+		        	x_old = robot4.getX();
+		        	y_old = robot4.getY();
+		        	 /*try {
 		        		 gameScreen.sendData("Robot 4 INITIAL - X:" + robot4.getX() + " Y:" + robot4.getY());
 		             } catch (IOException e) {
 		            	 e.printStackTrace();
-		             }
+		             }*/
 		        }
 		        
 		    break;
@@ -202,37 +213,52 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 			// touch was released
 	            if (robot1.isTouched()) {
 	                robot1.setTouched(false);
+	                x_new = robot1.getX();
+	                y_new = robot1.getY();
 	                try {
-	                	gameScreen.sendData("Robot 1 FINAL - X:" + robot1.getX() + " Y:" + robot1.getY());
+	                	gameScreen.sendData("gme:" + "001:" + "blu:" + "fwd:" + String.format("%04d",x_new) + String.format("%04d",y_new) + String.format("%04d",x_old) + String.format("%04d",y_old) + "100:");
+	                	//gameScreen.sendData("gme:" + "001:" + "blu:" + "fwd:" + String.format("%04d",x_new) + " " + String.format("%04d",y_new) + " " + String.format("%04d",x_old) + " " + String.format("%04d",y_old) + " " + "100:");
+	                	//gameScreen.sendData("Robot 1 FINAL - X:" + robot1.getX() + " Y:" + robot2.getY());
 	                } catch (IOException e) {
 	                	e.printStackTrace();
 	                }
 	            }
 	            else if (robot2.isTouched()) {
 	                robot2.setTouched(false);
+	                x_new = robot2.getX();
+	                y_new = robot2.getY();
 	                try {
-	                	gameScreen.sendData("Robot 2 FINAL - X:" + robot2.getX() + " Y:" + robot2.getY());
+	                	gameScreen.sendData("gme:" + "002:" + "blu:" + "fwd:" + String.format("%04d",x_new) + String.format("%04d",y_new) + String.format("%04d",x_old) + String.format("%04d",y_old) + "100:");
+	                	//gameScreen.sendData("gme:" + "002:" + "blu:" + "fwd:" + String.format("%04d",x_new) + " " + String.format("%04d",y_new) + " " + String.format("%04d",x_old) + " " + String.format("%04d",y_old) + " " + "100:");
+	                	//gameScreen.sendData("Robot 2 FINAL - X:" + robot2.getX() + " Y:" + robot2.getY());
 	                } catch (IOException e) {
 	                	e.printStackTrace();
 	                }
 	            }
 	            else if (robot3.isTouched()) {
 	                robot3.setTouched(false);
+	                x_new = robot3.getX();
+	                y_new = robot3.getY();
 	                try {
-	                	gameScreen.sendData("Robot 3 FINAL - X:" + robot3.getX() + " Y:" + robot3.getY());
+	                	gameScreen.sendData("gme:" + "003:" + "ora:" + "fwd:" + String.format("%04d",x_new) + String.format("%04d",y_new) + String.format("%04d",x_old) + String.format("%04d",y_old) + "100:");
+	                	//gameScreen.sendData("gme:" + "003:" + "org:" + "fwd:" + String.format("%04d",x_new) + " " + String.format("%04d",y_new) + " " + String.format("%04d",x_old) + " " + String.format("%04d",y_old) + " " + "100:");
+	                	//gameScreen.sendData("Robot 3 FINAL - X:" + robot3.getX() + " Y:" + robot3.getY());
 	                } catch (IOException e) {
 	                	e.printStackTrace();
 	                }
 	            }
 	            else if (robot4.isTouched()) {
 	                robot4.setTouched(false);
+	                x_new = robot4.getX();
+	                y_new = robot4.getY();
 	                try {
-	                	gameScreen.sendData("Robot 4 FINAL - X:" + robot4.getX() + " Y:" + robot4.getY());
+	                	gameScreen.sendData("gme:" + "004:" + "ora:" + "fwd:" + String.format("%04d",x_new) + String.format("%04d",y_new) + String.format("%04d",x_old) + String.format("%04d",y_old) + "100:");
+	                	//gameScreen.sendData("gme:" + "004:" + "org:" + "fwd:" + String.format("%04d",x_new) + " " + String.format("%04d",y_new) + " " + String.format("%04d",x_old) + " " + String.format("%04d",y_old) + " " + "100:");
+	                	//gameScreen.sendData("Robot 4 FINAL - X:" + robot4.getX() + " Y:" + robot4.getY());
 	                } catch (IOException e) {
 	                	e.printStackTrace();
 	                }
 	            }
-	            
 	         /*   try {
 	            	gameScreen.sendData("FINALPOS");
 	    			gameScreen.sendData("Robot 1: X:" + robot1.getX() + " Y:" + robot1.getY() );
@@ -260,4 +286,5 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		return new Canvas(bg);
 	}*/
 	
+
 }
