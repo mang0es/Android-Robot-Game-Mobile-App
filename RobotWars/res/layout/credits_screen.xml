@@ -88,6 +88,25 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <TextView
+        android:id="@+id/AndroidAdvisor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="50dp"
+        android:text="Android Advisor "
+        android:textStyle="bold|italic"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/GregoryEnriquez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="20dp"
+        android:text="Gregory Enriquez"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
         android:id="@+id/Acknowledgments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
