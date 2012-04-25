@@ -19,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DebugScreen extends Activity{
 
@@ -341,6 +342,39 @@ public class DebugScreen extends Activity{
             }
         });
  
+    }
+    
+	@Override
+    public void onBackPressed() {
+		AlertDialog.Builder alertBox = new AlertDialog.Builder(this);
+		alertBox.setMessage("Are you sure you want to exit?")
+		       .setCancelable(false)
+		       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		        	   try {
+		        		    PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+		        	        out.println("gme:" + "000:" + "xxx:" + "EXIT" + "0000" + "0000" + "0000" + "0000" + "100:");
+							socket.close();
+							if(socket.isClosed() == true)
+							{
+							    Toast.makeText(getApplicationContext(), "Socket closed...", Toast.LENGTH_LONG).show();
+							}
+						   }
+			        	   catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						   }
+			        	finish();
+			           }
+		       })
+		       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		       });
+		//AlertDialog alert = builder.create();
+		alertBox.show();
+       return;
     }
 
 }

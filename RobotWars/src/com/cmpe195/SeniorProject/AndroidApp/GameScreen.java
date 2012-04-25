@@ -150,18 +150,20 @@ public class GameScreen extends Activity {
 		       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
 		        	   try {
-						socket.close();
-						if(socket.isClosed() == true)
-						{
-						    Toast.makeText(getApplicationContext(), "Socket closed...", Toast.LENGTH_LONG).show();
-						}
-					   }
-		        	   catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					   }
-		        	finish();
-		           }
+		        		    PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+		        	        out.println("gme:" + "000:" + "xxx:" + "EXIT" + "0000" + "0000" + "0000" + "0000" + "100:");
+							socket.close();
+							if(socket.isClosed() == true)
+							{
+							    Toast.makeText(getApplicationContext(), "Socket closed...", Toast.LENGTH_LONG).show();
+							}
+						   }
+			        	   catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						   }
+			        	finish();
+			           }
 		       })
 		       .setNegativeButton("No", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {

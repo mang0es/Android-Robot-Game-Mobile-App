@@ -76,15 +76,4 @@
         android:text="Start Game"
         android:textSize="21dp" />
 
-    <Button
-        android:id="@+id/ssc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/gameButton"
-        android:layout_alignBottom="@+id/gameButton"
-        android:layout_marginLeft="73dp"
-        android:layout_toRightOf="@+id/gameButton"
-        android:text="Greggles!"
-        android:textSize="21dp" />
-
 </RelativeLayout>

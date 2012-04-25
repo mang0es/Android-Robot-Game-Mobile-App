@@ -37,14 +37,14 @@ public class ConfigScreen extends Activity {
 			}
 		});
 		
-		Button ssc = (Button) findViewById(R.id.ssc);
+		/*Button ssc = (Button) findViewById(R.id.ssc);
 		ssc.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				startGreggles();
 				//finish();
 			}
-		});
+		});*/
 			
 	}	
 	
@@ -148,7 +148,7 @@ public class ConfigScreen extends Activity {
  		}
  	}
 	
-	private void startGreggles()
+	/*private void startGreggles()
  	{
  		try{
  			Intent search = new Intent(this, Greggles.class);
@@ -159,7 +159,7 @@ public class ConfigScreen extends Activity {
  		{
  			Toast.makeText(this, "Activity not found!", Toast.LENGTH_SHORT).show();
  		}
- 	}
+ 	}*/
 	
 	
 }

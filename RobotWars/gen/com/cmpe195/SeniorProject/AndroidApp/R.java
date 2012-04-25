@@ -113,12 +113,13 @@ public final class R {
     }
     public static final class layout {
         public static final int config_screen=0x7f030000;
-        public static final int credits_screen=0x7f030001;
-        public static final int debug_screen=0x7f030002;
-        public static final int game_screen=0x7f030003;
-        public static final int greggles=0x7f030004;
-        public static final int select_screen=0x7f030005;
-        public static final int start_screen=0x7f030006;
+        public static final int config_screen_old=0x7f030001;
+        public static final int credits_screen=0x7f030002;
+        public static final int debug_screen=0x7f030003;
+        public static final int game_screen=0x7f030004;
+        public static final int greggles=0x7f030005;
+        public static final int select_screen=0x7f030006;
+        public static final int start_screen=0x7f030007;
     }
     public static final class menu {
         public static final int game_screen_options_menu=0x7f070000;

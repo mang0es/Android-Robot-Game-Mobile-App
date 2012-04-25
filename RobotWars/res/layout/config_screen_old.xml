@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <requestFocus />
+
+    <EditText
+        android:id="@+id/ipAddress_input"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_alignBaseline="@+id/ipAddress"
+        android:layout_alignBottom="@+id/ipAddress"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/ipAddress" 
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/portNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ipAddress_input"
+        android:layout_alignBottom="@+id/ipAddress_input"
+        android:layout_marginLeft="112dp"
+        android:layout_toRightOf="@+id/ipAddress_input"
+        android:text="Port Number:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/portNumber_input"
+        android:layout_width="100dp"
+        android:layout_height="42dp"
+        android:layout_alignBaseline="@+id/portNumber"
+        android:layout_alignBottom="@+id/portNumber"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/portNumber"
+        android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/ipAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="200dp"
+        android:text="IP Address:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ipAddress"
+        android:layout_marginTop="85dp"
+        android:text="Enter the Server&apos;s IP Address and Port Number:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="28dp" />
+
+    <Button
+        android:id="@+id/debugButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ipAddress"
+        android:layout_below="@+id/ipAddress_input"
+        android:layout_marginTop="65dp"
+        android:text="Debug Mode"
+        android:textSize="21dp" />
+
+    <Button
+        android:id="@+id/gameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/debugButton"
+        android:layout_alignBottom="@+id/debugButton"
+        android:layout_alignLeft="@+id/ipAddress_input"
+        android:layout_marginLeft="43dp"
+        android:text="Start Game"
+        android:textSize="21dp" />
+
+    <Button
+        android:id="@+id/ssc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gameButton"
+        android:layout_alignBottom="@+id/gameButton"
+        android:layout_marginLeft="73dp"
+        android:layout_toRightOf="@+id/gameButton"
+        android:text="Greggles!"
+        android:textSize="21dp" />
+
+</RelativeLayout>
