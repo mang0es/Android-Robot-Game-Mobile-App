@@ -27,6 +27,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	
 	private int x_old;
 	private int y_old;
+    private int x_delta;
+    private int y_delta;
 	private int x_new;
 	private int y_new;
 	
@@ -184,45 +186,184 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		             }*/
 		        }
 		    break;
-		   case MotionEvent.ACTION_MOVE:
-			   
-			   // the gestures
-		        if (robot1.isTouched()) 
-		        {    	
-		        	System.out.println("Robot 1 moving");
-		            // robot1 was picked up and is being dragged
-		            robot1.setX((int)event.getX());
-		            robot1.setY((int)event.getY());
-		            
-		        }
-		        else if (robot2.isTouched()) 
-		        {
-		            System.out.println("Robot 2 moving");
-		            // robot2 was picked up and is being dragged
-		            robot2.setX((int)event.getX());
-		            robot2.setY((int)event.getY());
-		        }
-		        else if (robot3.isTouched()) 
-		        {
-		            System.out.println("Robot 3 moving");
-		            // robot3 was picked up and is being dragged
-		            robot3.setX((int)event.getX());
-		            robot3.setY((int)event.getY());
-		        }
-		        else if (robot4.isTouched()) 
-		        {
-		            System.out.println("Robot 4 moving");
-		            // robot4 was picked up and is being dragged
-		            robot4.setX((int)event.getX());
-		            robot4.setY((int)event.getY());
-		        }
-		    break;
+               case MotionEvent.ACTION_MOVE:
+                   
+                   // the gestures
+                   if (robot1.isTouched()) 
+                   {    	
+                       System.out.println("Robot 1 moving");
+                       // robot1 was picked up and is being dragged
+                       // restrict movement
+                       x_delta = Math.abs(x_old - (int)event.getX());
+                       y_delta = Math.abs(y_old - (int)event.getY());
+                       
+                       // dragging left and right
+                       if( y_delta < x_delta )
+                       {
+                           robot1.setX((int)event.getX());
+                       }
+                       // dragging up and down
+                       else if ( x_delta < y_delta )
+                       {
+                           robot1.setY((int)event.getY());
+                       }
+                   }
+                   else if (robot2.isTouched()) 
+                   {
+                       System.out.println("Robot 2 moving");
+                       // robot2 was picked up and is being dragged
+                       
+                       // restrict movement
+                       x_delta = Math.abs(x_old - (int)event.getX());
+                       y_delta = Math.abs(y_old - (int)event.getY());
+                       
+                       // dragging left and right
+                       if( y_delta < x_delta )
+                       {
+                           robot2.setX((int)event.getX());
+                       }
+                       // dragging up and down
+                       else if ( x_delta < y_delta )
+                       {
+                           robot2.setY((int)event.getY());
+                       }
+                   }
+                   else if (robot3.isTouched()) 
+                   {
+                       System.out.println("Robot 3 moving");
+                       // robot3 was picked up and is being dragged
+                       
+                       // restrict movement
+                       x_delta = Math.abs(x_old - (int)event.getX());
+                       y_delta = Math.abs(y_old - (int)event.getY());
+                       
+                       // dragging left and right
+                       if( y_delta < x_delta )
+                       {
+                           robot3.setX((int)event.getX());
+                       }
+                       // dragging up and down
+                       else if ( x_delta < y_delta )
+                       {
+                           robot3.setY((int)event.getY());
+                       }
+                   }
+                   else if (robot4.isTouched()) 
+                   {
+                       System.out.println("Robot 4 moving");
+                       // robot4 was picked up and is being dragged
+                       
+                       // restrict movement
+                       x_delta = Math.abs(x_old - (int)event.getX());
+                       y_delta = Math.abs(y_old - (int)event.getY());
+                       
+                       // dragging left and right
+                       if( y_delta < x_delta )
+                       {
+                           robot4.setX((int)event.getX());
+                       }
+                       // dragging up and down
+                       else if ( x_delta < y_delta )
+                       {
+                           robot4.setY((int)event.getY());
+                       }
+                   }
+                   break;
 		   case MotionEvent.ACTION_UP:
 			// touch was released
 			   
 			   // Robot 1
-	            if (robot1.isTouched()) {
-	                robot1.setTouched(false);
+                   if (robot1.isTouched()) {
+                       robot1.setTouched(false);
+                       
+                       // Center of grid blocks (X-axis): 70, 215, 360, 505, 650, 795, 940, 1085, 1230
+                       // 70 + 145x <= 1230
+                       // Center of grid blocks (Y-axis): 70, 215, 360, 505, 650
+                       // 70 + 145y <= 650
+                       
+                       /* animation tests */
+                       /*
+                        ImageView imageView1 = (ImageView) findViewById(R.drawable.robot_teal_0deg);
+                        imageView1.setImageBitmap(robot1.getBitmap());
+                        TranslateAnimation slide = new TranslateAnimation(robot1.getX(), 0, robot1.getY(), 0);   
+                        slide.setDuration(1000);   
+                        slide.setFillAfter(true);   
+                        imageView1.startAnimation(slide);
+                        //imageView1.setVisibility(View.VISIBLE);
+                        */
+                       
+                       /*MotionEvent motionEvent = MotionEvent.obtain(
+                        SystemClock.uptimeMillis(),
+                        SystemClock.uptimeMillis()+100,
+                        MotionEvent.ACTION_UP,
+                        0.0f,0.0f,0);
+                        GamePanel.dispatchTouchEvent(motionEvent);
+                        */
+                       
+                       /* correct x coordinate
+                        * to center on grid block */
+                       
+                       if(robot1.getX() <= 145)
+                       {
+                           robot1.setX(70);
+                       }
+                       else if(robot1.getX() >= 146 && robot1.getX() <= 290)
+                       {
+                           robot1.setX(215);
+                       }
+                       else if(robot1.getX() >= 291 && robot1.getX() <= 435)
+                       {
+                           robot1.setX(360);
+                       }
+                       else if(robot1.getX() >= 436 && robot1.getX() <= 580)
+                       {
+                           robot1.setX(505);
+                       }
+                       else if(robot1.getX() >= 581 && robot1.getX() <= 725)
+                       {
+                           robot1.setX(650);
+                       }
+                       else if(robot1.getX() >= 726 && robot1.getX() <= 870)
+                       {
+                           robot1.setX(795);
+                       }
+                       else if(robot1.getX() >= 871 && robot1.getX() <= 1015)
+                       {
+                           robot1.setX(940);
+                       }
+                       else if(robot1.getX() >= 1016 && robot1.getX() <= 1160)
+                       {
+                           robot1.setX(1085);
+                       }
+                       else if(robot1.getX() >= 1161)
+                       {
+                           robot1.setX(1230);
+                       }
+                       
+                       /* correct y coordinate
+                        * to center on grid block */
+                       
+                       if(robot1.getY() <= 145)
+                       {
+                           robot1.setY(70);
+                       }
+                       else if(robot1.getY() >= 146 && robot1.getY() <= 290)
+                       {
+                           robot1.setY(215);
+                       }
+                       else if(robot1.getY() >= 291 && robot1.getY() <= 435)
+                       {
+                           robot1.setY(360);
+                       }
+                       else if(robot1.getY() >= 436 && robot1.getY() <= 580)
+                       {
+                           robot1.setY(505);
+                       }
+                       else if(robot1.getY() >= 581)
+                       {
+                           robot1.setY(650);
+                       }
+                       
 	                x_new = robot1.getX();
 	                y_new = robot1.getY();
 	                
@@ -552,9 +693,80 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	            
 	            
 	           // Robot 2
-	            else if (robot2.isTouched()) {
-	                robot2.setTouched(false);
-	                x_new = robot2.getX();
+                   else if (robot2.isTouched()) {
+                       robot2.setTouched(false);
+                       
+                       
+                       // Center of grid blocks (X-axis): 70, 215, 360, 505, 650, 795, 940, 1085, 1230
+                       // 70 + 145x <= 1230
+                       // Center of grid blocks (Y-axis): 70, 215, 360, 505, 650
+                       // 70 + 145y <= 650
+                       
+                       /* correct x coordinate
+                        * to center on grid block */
+                       
+                       if(robot2.getX() <= 145)
+                       {
+                           robot2.setX(70);
+                       }
+                       else if(robot2.getX() >= 146 && robot2.getX() <= 290)
+                       {
+                           robot2.setX(215);
+                       }
+                       else if(robot2.getX() >= 291 && robot2.getX() <= 435)
+                       {
+                           robot2.setX(360);
+                       }
+                       else if(robot2.getX() >= 436 && robot2.getX() <= 580)
+                       {
+                           robot2.setX(505);
+                       }
+                       else if(robot2.getX() >= 581 && robot2.getX() <= 725)
+                       {
+                           robot2.setX(650);
+                       }
+                       else if(robot2.getX() >= 726 && robot2.getX() <= 870)
+                       {
+                           robot2.setX(795);
+                       }
+                       else if(robot2.getX() >= 871 && robot2.getX() <= 1015)
+                       {
+                           robot2.setX(940);
+                       }
+                       else if(robot2.getX() >= 1016 && robot2.getX() <= 1160)
+                       {
+                           robot2.setX(1085);
+                       }
+                       else if(robot2.getX() >= 1161)
+                       {
+                           robot2.setX(1230);
+                       }
+                       
+                       /* correct y coordinate
+                        * to center on grid block */
+                       
+                       if(robot2.getY() <= 145)
+                       {
+                           robot2.setY(70);
+                       }
+                       else if(robot2.getY() >= 146 && robot2.getY() <= 290)
+                       {
+                           robot2.setY(215);
+                       }
+                       else if(robot2.getY() >= 291 && robot2.getY() <= 435)
+                       {
+                           robot2.setY(360);
+                       }
+                       else if(robot2.getY() >= 436 && robot2.getY() <= 580)
+                       {
+                           robot2.setY(505);
+                       }
+                       else if(robot2.getY() >= 581)
+                       {
+                           robot2.setY(650);
+                       }
+
+                    x_new = robot2.getX();
 	                y_new = robot2.getY();
 	                
 	                int direction = getMovementDirection(x_old, y_old, x_new, y_new);
@@ -772,8 +984,78 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	            
 	            
 	            // Robot 3
-	            else if (robot3.isTouched()) {
-	                robot3.setTouched(false);
+                   else if (robot3.isTouched()) {
+                       robot3.setTouched(false);
+                       
+                       // Center of grid blocks (X-axis): 70, 215, 360, 505, 650, 795, 940, 1085, 1230
+                       // 70 + 145x <= 1230
+                       // Center of grid blocks (Y-axis): 70, 215, 360, 505, 650
+                       // 70 + 145y <= 650
+                       
+                       /* correct x coordinate
+                        * to center on grid block */
+                       
+                       if(robot3.getX() <= 145)
+                       {
+                           robot3.setX(70);
+                       }
+                       else if(robot3.getX() >= 146 && robot3.getX() <= 290)
+                       {
+                           robot3.setX(215);
+                       }
+                       else if(robot3.getX() >= 291 && robot3.getX() <= 435)
+                       {
+                           robot3.setX(360);
+                       }
+                       else if(robot3.getX() >= 436 && robot3.getX() <= 580)
+                       {
+                           robot3.setX(505);
+                       }
+                       else if(robot3.getX() >= 581 && robot3.getX() <= 725)
+                       {
+                           robot3.setX(650);
+                       }
+                       else if(robot3.getX() >= 726 && robot3.getX() <= 870)
+                       {
+                           robot3.setX(795);
+                       }
+                       else if(robot3.getX() >= 871 && robot3.getX() <= 1015)
+                       {
+                           robot3.setX(940);
+                       }
+                       else if(robot3.getX() >= 1016 && robot3.getX() <= 1160)
+                       {
+                           robot3.setX(1085);
+                       }
+                       else if(robot3.getX() >= 1161)
+                       {
+                           robot3.setX(1230);
+                       }
+                       
+                       /* correct y coordinate
+                        * to center on grid block */
+                       
+                       if(robot3.getY() <= 145)
+                       {
+                           robot3.setY(70);
+                       }
+                       else if(robot3.getY() >= 146 && robot3.getY() <= 290)
+                       {
+                           robot3.setY(215);
+                       }
+                       else if(robot3.getY() >= 291 && robot3.getY() <= 435)
+                       {
+                           robot3.setY(360);
+                       }
+                       else if(robot3.getY() >= 436 && robot3.getY() <= 580)
+                       {
+                           robot3.setY(505);
+                       }
+                       else if(robot3.getY() >= 581)
+                       {
+                           robot3.setY(650);
+                       }
+                       
 	                x_new = robot3.getX();
 	                y_new = robot3.getY();
 
@@ -1001,6 +1283,76 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	            // Robot 4
 	            else if (robot4.isTouched()) {
 	                robot4.setTouched(false);
+                    
+	                // Center of grid blocks (X-axis): 70, 215, 360, 505, 650, 795, 940, 1085, 1230
+	        		// 70 + 145x <= 1230
+	        		// Center of grid blocks (Y-axis): 70, 215, 360, 505, 650
+	        		// 70 + 145y <= 650
+	                
+	                /* correct x coordinate
+	                 * to center on grid block */
+	                
+	                if(robot4.getX() <= 145)
+	                {
+               			robot4.setX(70);
+               		}
+	                else if(robot4.getX() >= 146 && robot4.getX() <= 290)
+	                {
+               			robot4.setX(215);
+               		}
+	                else if(robot4.getX() >= 291 && robot4.getX() <= 435)
+	                {
+               			robot4.setX(360);
+               		}
+	                else if(robot4.getX() >= 436 && robot4.getX() <= 580)
+	                {
+               			robot4.setX(505);
+               		}
+	                else if(robot4.getX() >= 581 && robot4.getX() <= 725)
+	                {
+               			robot4.setX(650);
+               		}
+	                else if(robot4.getX() >= 726 && robot4.getX() <= 870)
+	                {
+               			robot4.setX(795);
+               		}
+	                else if(robot4.getX() >= 871 && robot4.getX() <= 1015)
+	                {
+               			robot4.setX(940);
+               		}
+	                else if(robot4.getX() >= 1016 && robot4.getX() <= 1160)
+	                {
+               			robot4.setX(1085);
+               		}
+	                else if(robot4.getX() >= 1161)
+	                {
+               			robot4.setX(1230);
+               		}
+	                
+	                /* correct y coordinate
+	                 * to center on grid block */
+	                
+	                if(robot4.getY() <= 145)
+	                {
+               			robot4.setY(70);
+               		}
+	                else if(robot4.getY() >= 146 && robot4.getY() <= 290)
+	                {
+               			robot4.setY(215);
+               		}
+	                else if(robot4.getY() >= 291 && robot4.getY() <= 435)
+	                {
+               			robot4.setY(360);
+               		}
+	                else if(robot4.getY() >= 436 && robot4.getY() <= 580)
+	                {
+               			robot4.setY(505);
+               		}
+	                else if(robot4.getY() >= 581)
+	                {
+               			robot4.setY(650);
+               		}
+	                
 	                x_new = robot4.getX();
 	                y_new = robot4.getY();
 	                

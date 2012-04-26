@@ -2,22 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:src="@drawable/banner2left" />
     
 <ScrollView
 		android:layout_height="fill_parent"
-		android:layout_width="fill_parent">
+		android:layout_width="fill_parent" >
 		
 	<LinearLayout
   		android:orientation="vertical"
-  		android:layout_width="fill_parent"
-  		android:layout_height="fill_parent" >
-    
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content" >
+	    
     <TextView
         android:id="@+id/SJSU_CmpE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
         android:text="SJSU Department of Computer Engineering, Spring 2012"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -26,7 +32,7 @@
         android:id="@+id/TeamMembers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text="Team "
         android:textStyle="bold|italic"
@@ -36,7 +42,7 @@
         android:id="@+id/Brigitte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Brigitte De Leon"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -45,7 +51,7 @@
         android:id="@+id/Felix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Felix Medina"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -54,7 +60,7 @@
         android:id="@+id/Allen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Allen Mamaril"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -63,7 +69,7 @@
         android:id="@+id/Serena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Serena Trieu"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -72,7 +78,7 @@
         android:id="@+id/Advisor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text="Advisor "
         android:textStyle="bold|italic"
@@ -82,7 +88,7 @@
         android:id="@+id/HalukOzemek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Haluk Ozemek"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -91,7 +97,7 @@
         android:id="@+id/AndroidAdvisor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text="Android Advisor "
         android:textStyle="bold|italic"
@@ -101,7 +107,7 @@
         android:id="@+id/GregoryEnriquez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Gregory Enriquez"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -110,7 +116,7 @@
         android:id="@+id/Acknowledgments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text="Acknowledgments "
         android:textStyle="bold|italic"
@@ -120,7 +126,7 @@
         android:id="@+id/FacultyMembers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Computer/Mechanical/Electrical Engineering Faculty Members "
         android:textStyle="italic"
@@ -130,7 +136,7 @@
         android:id="@+id/Alarcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Irma Alarcon"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -139,7 +145,7 @@
         android:id="@+id/Barrett"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="William Barrett"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -148,7 +154,7 @@
         android:id="@+id/Bindal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Ahmet Bindal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -157,7 +163,7 @@
         android:id="@+id/Chen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Ray Chen"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -166,7 +172,7 @@
         android:id="@+id/Cirimele"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Frank Cirimele"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -175,7 +181,7 @@
         android:id="@+id/Dhaliwal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Suchreet Dhaliwal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -184,7 +190,7 @@
         android:id="@+id/Fatoohi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Rod Fatoohi"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -193,7 +199,7 @@
         android:id="@+id/Furman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Buff Furman"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -202,7 +208,7 @@
         android:id="@+id/Keralapura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Mallika Keralapura"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -211,7 +217,7 @@
         android:id="@+id/Gomez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Juan Gomez"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -220,7 +226,7 @@
         android:id="@+id/Hsu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Ping Hsu"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -229,7 +235,7 @@
         android:id="@+id/Hung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Donald Hung"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -238,7 +244,7 @@
         android:id="@+id/Jones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Kurtis Jones"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -247,7 +253,7 @@
         android:id="@+id/Kang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Preet Kang"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -256,7 +262,7 @@
         android:id="@+id/Li"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Harry Li"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -265,7 +271,7 @@
         android:id="@+id/Lin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Frank Lin"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -274,7 +280,7 @@
         android:id="@+id/Ozemek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Haluk Ozemek"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -283,7 +289,7 @@
         android:id="@+id/Reischl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Peter Reischl"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -292,7 +298,7 @@
         android:id="@+id/Robinson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Michael Robinson"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -301,7 +307,7 @@
         android:id="@+id/Say"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Ahmet Fazil Say"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -310,7 +316,7 @@
         android:id="@+id/Shim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Simon Shim"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -319,7 +325,7 @@
         android:id="@+id/Yu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Weider Yu"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -328,7 +334,7 @@
         android:id="@+id/Zoroofchi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Mohammad Zoroofchi"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -337,7 +343,7 @@
         android:id="@+id/StudentsClassmates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Fellow Students/Classmates "
         android:textStyle="italic"
@@ -347,7 +353,7 @@
         android:id="@+id/Bajet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Arnold R. Bajet, Jr."
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -356,7 +362,7 @@
         android:id="@+id/Chu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Ellen Chu"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -365,7 +371,7 @@
         android:id="@+id/Chang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Pin Chang"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -374,7 +380,7 @@
         android:id="@+id/Chung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Linda Chung"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -383,7 +389,7 @@
         android:id="@+id/Enriquez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Gregory Enriquez"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -392,7 +398,7 @@
         android:id="@+id/Kim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Denny Dae A Kim"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -401,7 +407,7 @@
         android:id="@+id/Nnaji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Chuma Nnaji"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -410,7 +416,7 @@
         android:id="@+id/Prasad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Hema Prasad"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -419,7 +425,7 @@
         android:id="@+id/Ratner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Max Ratner"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -428,7 +434,7 @@
         android:id="@+id/Trinh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Truong Trinh"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -437,7 +443,7 @@
         android:id="@+id/Tugangui"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Christopher Tugangui"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -446,7 +452,7 @@
         android:id="@+id/Wong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Spencer Wong"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -455,7 +461,7 @@
         android:id="@+id/Music"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text="Music"
         android:textStyle="bold|italic"
@@ -465,7 +471,7 @@
         android:id="@+id/StarshipAmazing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Starship Amazing "
         android:textStyle="italic"
@@ -475,7 +481,7 @@
         android:id="@+id/Bonk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="3dp"
         android:text="Bonk (You Got Bonked)"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -484,7 +490,7 @@
         android:id="@+id/BlankSpace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />

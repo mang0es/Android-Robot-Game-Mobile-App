@@ -3,24 +3,22 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
     
-        <Button
+    <Button
         android:id="@+id/ConfigButton"
-        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:text="Configure"
-        android:textSize="30dp" />
+        android:background="@drawable/config_button" />
 
     <Button
         android:id="@+id/CreditsButton"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ConfigButton"
         android:layout_below="@+id/ConfigButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:text="Credits"
-        android:textSize="30dp" />
+        android:background="@drawable/credits_button" />
 
 </RelativeLayout>

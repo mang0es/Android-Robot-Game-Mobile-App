@@ -7,7 +7,7 @@
 
     <EditText
         android:id="@+id/ipAddress_input"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="42dp"
         android:layout_alignBaseline="@+id/ipAddress"
         android:layout_alignBottom="@+id/ipAddress"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/ipAddress_input"
         android:layout_alignBottom="@+id/ipAddress_input"
-        android:layout_marginLeft="112dp"
+        android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/ipAddress_input"
         android:text="Port Number:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -40,7 +40,7 @@
         android:id="@+id/ipAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="77dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="200dp"
         android:text="IP Address:"
         android:textAppearance="?android:attr/textAppearanceLarge" />

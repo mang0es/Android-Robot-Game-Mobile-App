@@ -353,7 +353,7 @@ public class DebugScreen extends Activity{
 		           public void onClick(DialogInterface dialog, int id) {
 		        	   try {
 		        		    PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
-		        	        out.println("gme:" + "000:" + "xxx:" + "EXIT" + "0000" + "0000" + "0000" + "0000" + "100:");
+		        	        out.println("dbg:" + "000:" + "xxx:" + "EXIT" + "0000" + "0000" + "0000" + "0000" + "100:");
 							socket.close();
 							if(socket.isClosed() == true)
 							{
