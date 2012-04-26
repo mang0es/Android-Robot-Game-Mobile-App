@@ -24,14 +24,15 @@ public final class R {
         public static final int ic_launcher=0x7f02000a;
         public static final int icon_default=0x7f02000b;
         public static final int icon_robotwars=0x7f02000c;
-        public static final int robot_orange_0deg=0x7f02000d;
-        public static final int robot_orange_180deg=0x7f02000e;
-        public static final int robot_orange_270deg=0x7f02000f;
-        public static final int robot_orange_90deg=0x7f020010;
-        public static final int robot_teal_0deg=0x7f020011;
-        public static final int robot_teal_180deg=0x7f020012;
-        public static final int robot_teal_270deg=0x7f020013;
-        public static final int robot_teal_90deg=0x7f020014;
+        public static final int laser_red=0x7f02000d;
+        public static final int robot_orange_0deg=0x7f02000e;
+        public static final int robot_orange_180deg=0x7f02000f;
+        public static final int robot_orange_270deg=0x7f020010;
+        public static final int robot_orange_90deg=0x7f020011;
+        public static final int robot_teal_0deg=0x7f020012;
+        public static final int robot_teal_180deg=0x7f020013;
+        public static final int robot_teal_270deg=0x7f020014;
+        public static final int robot_teal_90deg=0x7f020015;
     }
     public static final class id {
         public static final int Acknowledgments=0x7f070013;
@@ -132,7 +133,8 @@ public final class R {
         public static final int game_screen_options_menu=0x7f060000;
     }
     public static final class raw {
-        public static final int starshipamazing_bonk=0x7f040000;
+        public static final int lasershot=0x7f040000;
+        public static final int starshipamazing_bonk=0x7f040001;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
