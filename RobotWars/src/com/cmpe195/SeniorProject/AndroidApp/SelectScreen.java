@@ -15,6 +15,14 @@ public class SelectScreen extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_screen);
 		
+		Button instructionsButton = (Button) findViewById(R.id.InstructionsButton);
+		instructionsButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startInstructionsScreen();
+			}
+		});
+		
 		Button configButton = (Button) findViewById(R.id.ConfigButton);
 		configButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -32,6 +40,18 @@ public class SelectScreen extends Activity{
 			}
 		});
 	}
+	
+	private void startInstructionsScreen()
+ 	{
+ 		try{
+ 			Intent search = new Intent(this, InstructionsScreen.class);
+ 			startActivity(search);
+ 		}
+ 		catch (ActivityNotFoundException afne)
+ 		{
+ 			Toast.makeText(this, "Activity not found!", Toast.LENGTH_SHORT).show();
+ 		}
+ 	}
 	
 	private void startConfigScreen()
  	{

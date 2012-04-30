@@ -24,15 +24,18 @@ public final class R {
         public static final int ic_launcher=0x7f02000a;
         public static final int icon_default=0x7f02000b;
         public static final int icon_robotwars=0x7f02000c;
-        public static final int laser_red=0x7f02000d;
-        public static final int robot_orange_0deg=0x7f02000e;
-        public static final int robot_orange_180deg=0x7f02000f;
-        public static final int robot_orange_270deg=0x7f020010;
-        public static final int robot_orange_90deg=0x7f020011;
-        public static final int robot_teal_0deg=0x7f020012;
-        public static final int robot_teal_180deg=0x7f020013;
-        public static final int robot_teal_270deg=0x7f020014;
-        public static final int robot_teal_90deg=0x7f020015;
+        public static final int instructions=0x7f02000d;
+        public static final int instructions_button=0x7f02000e;
+        public static final int instructions_pressed=0x7f02000f;
+        public static final int laser_red=0x7f020010;
+        public static final int robot_orange_0deg=0x7f020011;
+        public static final int robot_orange_180deg=0x7f020012;
+        public static final int robot_orange_270deg=0x7f020013;
+        public static final int robot_orange_90deg=0x7f020014;
+        public static final int robot_teal_0deg=0x7f020015;
+        public static final int robot_teal_180deg=0x7f020016;
+        public static final int robot_teal_270deg=0x7f020017;
+        public static final int robot_teal_90deg=0x7f020018;
     }
     public static final class id {
         public static final int Acknowledgments=0x7f070013;
@@ -51,8 +54,8 @@ public final class R {
         public static final int Chu=0x7f07002e;
         public static final int Chung=0x7f070030;
         public static final int Cirimele=0x7f070019;
-        public static final int ConfigButton=0x7f07004c;
-        public static final int CreditsButton=0x7f07004d;
+        public static final int ConfigButton=0x7f07004e;
+        public static final int CreditsButton=0x7f07004f;
         public static final int Dhaliwal=0x7f07001a;
         public static final int Enriquez=0x7f070031;
         public static final int FacultyMembers=0x7f070014;
@@ -65,6 +68,8 @@ public final class R {
         public static final int Hsu=0x7f07001f;
         public static final int Hung=0x7f070020;
         public static final int ImageView01=0x7f070008;
+        public static final int Instructions=0x7f07004c;
+        public static final int InstructionsButton=0x7f07004d;
         public static final int Jones=0x7f070021;
         public static final int Kang=0x7f070022;
         public static final int Keralapura=0x7f07001d;
@@ -90,7 +95,7 @@ public final class R {
         public static final int Wong=0x7f070038;
         public static final int Yu=0x7f07002a;
         public static final int Zoroofchi=0x7f07002b;
-        public static final int banner=0x7f07004e;
+        public static final int banner=0x7f070050;
         public static final int cancelButton=0x7f07004b;
         public static final int debugButton=0x7f070005;
         public static final int eyepee=0x7f07003f;
@@ -105,12 +110,12 @@ public final class R {
         public static final int moveForward=0x7f070040;
         public static final int portNumber=0x7f070002;
         public static final int portNumber_input=0x7f070003;
-        public static final int press2continue=0x7f07004f;
+        public static final int press2continue=0x7f070051;
         public static final int rightRotation=0x7f070041;
         public static final int sendButton1=0x7f070045;
         public static final int sendButton2=0x7f070044;
         public static final int sendButton3=0x7f070042;
-        public static final int sendCoordinates=0x7f070050;
+        public static final int sendCoordinates=0x7f070052;
         public static final int sendallButton=0x7f07003e;
         public static final int shootLaser=0x7f070047;
         public static final int ssc=0x7f070007;
@@ -125,9 +130,10 @@ public final class R {
         public static final int debug_screen=0x7f030004;
         public static final int game_screen=0x7f030005;
         public static final int greggles=0x7f030006;
-        public static final int select_screen=0x7f030007;
-        public static final int select_screen_old=0x7f030008;
-        public static final int start_screen=0x7f030009;
+        public static final int instructions_screen=0x7f030007;
+        public static final int select_screen=0x7f030008;
+        public static final int select_screen_old=0x7f030009;
+        public static final int start_screen=0x7f03000a;
     }
     public static final class menu {
         public static final int game_screen_options_menu=0x7f060000;
