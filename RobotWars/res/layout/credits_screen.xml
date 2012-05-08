@@ -247,7 +247,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:text="Kurtis Jones"
+        android:text="Curtis Jones"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <TextView

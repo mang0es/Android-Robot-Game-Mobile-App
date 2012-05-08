@@ -3,147 +3,116 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <EditText
-        android:id="@+id/input3"
-        android:layout_width="1150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ipAddress"
-        android:layout_marginTop="200dp"
-        android:height="20dp"
-        android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/sendallButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/input3"
-        android:layout_marginTop="28dp"
-        android:text="Send All"
-        android:textSize="30dp" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/sendallButton"
-        android:layout_marginTop="65dp"
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/eyepee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="65dp"
-        android:text="IP Address"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/moveForward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/input3"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="40dp"
-        android:layout_toRightOf="@+id/sendallButton"
-        android:text="Forward"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="57dp"
+        android:text="Select a Robot to Move:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30dp" />
 
-    <Button
-        android:id="@+id/rightRotation"
+    <RadioGroup
+        android:id="@+id/radioBot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/moveForward"
-        android:layout_toRightOf="@+id/moveForward"
-        android:text="Rotate Right"
-        android:textSize="30dp" />
+        android:layout_alignTop="@+id/message"
+        android:layout_marginLeft="67dp"
+        android:layout_toRightOf="@+id/message" >
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Robot 1"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Robot 2"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Robot 3"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Robot 4"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="All Robots"
+            android:textSize="25dp" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/sendButton3"
+        android:id="@+id/RightArrowButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/moveForward"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/message"
+        android:layout_marginBottom="132dp"
+        android:layout_marginRight="58dp"
+        android:background="@drawable/arrow_right" />
+
+    <Button
+        android:id="@+id/LeftArrowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/RightArrowButton"
+        android:layout_alignBottom="@+id/RightArrowButton"
+        android:layout_toLeftOf="@+id/RightArrowButton"
+        android:background="@drawable/arrow_left" />
+
+    <Button
+        android:id="@+id/DownArrowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/message"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="53dp"
+        android:layout_marginLeft="33dp"
+        android:background="@drawable/arrow_down" />
+
+    <Button
+        android:id="@+id/UpArrowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/DownArrowButton"
+        android:layout_alignLeft="@+id/DownArrowButton"
+        android:background="@drawable/arrow_up" />
+
+    <Button
+        android:id="@+id/LaserButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/UpArrowButton"
+        android:layout_alignBottom="@+id/UpArrowButton"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="30dp"
-        android:text="Send"
-        android:textSize="30dp" />
-
-    <EditText
-        android:id="@+id/input2"
-        android:layout_width="1150dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/sendButton3"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="27dp"
-        android:ems="10"
-        android:height="20dp"
-        android:textSize="20dp" />
+        android:layout_marginRight="65dp"
+        android:background="@drawable/laser_button" />
 
     <Button
-        android:id="@+id/sendButton2"
+        android:id="@+id/DanceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sendButton3"
-        android:layout_alignTop="@+id/input2"
-        android:text="Send"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/sendButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/sendButton2"
-        android:layout_alignLeft="@+id/sendButton2"
-        android:layout_marginBottom="22dp"
-        android:text="Send"
-        android:textSize="30dp" />
-
-    <EditText
-        android:id="@+id/input1"
-        android:layout_width="1150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/sendButton1"
-        android:ems="10"
-        android:height="20dp"
-        android:textSize="20dp" >
-
-        <requestFocus />
-
-    </EditText>
-
-    <Button
-        android:id="@+id/shootLaser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sendallButton"
-        android:layout_marginLeft="72dp"
-        android:layout_toRightOf="@+id/rightRotation"
-        android:text="Shoot Laser!"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/moveBackward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/moveForward"
-        android:layout_below="@+id/rightRotation"
-        android:text="Backward"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/leftRotation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/rightRotation"
-        android:layout_alignBottom="@+id/rightRotation"
-        android:layout_toLeftOf="@+id/moveBackward"
-        android:text="Rotate Left"
-        android:textSize="30dp" />
+        android:layout_below="@+id/LaserButton"
+        android:layout_toLeftOf="@+id/LaserButton"
+        android:background="@drawable/dance_button" />
 
 </RelativeLayout>
