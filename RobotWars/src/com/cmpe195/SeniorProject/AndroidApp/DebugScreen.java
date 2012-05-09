@@ -9,6 +9,9 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +19,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class DebugScreen extends Activity {
@@ -30,12 +34,16 @@ public class DebugScreen extends Activity {
 	private String botID;
 	private String botColor;
 	
+	private MediaPlayer lasersound;
 	
     /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.debug_screen);
+	    
+		// enable the laser sound effect
+		lasersound = MediaPlayer.create(getApplicationContext(),R.raw.lasershot);
 	    
 	    // get bundle (from ConfigScreen)
 	    Bundle bundle = getIntent().getExtras();
@@ -66,7 +74,8 @@ public class DebugScreen extends Activity {
 			 
 			@Override
 			public void onClick(View v) {		
-		
+
+				
 				// get selected radio button from radioGroup
 				selectedId = radioGroup.getCheckedRadioButtonId();
 				
@@ -207,6 +216,9 @@ public class DebugScreen extends Activity {
 			@Override
 			public void onClick(View v) {		
 		
+				// play laser sound
+				lasersound.start();
+				
 				// get selected radio button from radioGroup
 				selectedId = radioGroup.getCheckedRadioButtonId();
 				
@@ -299,5 +311,38 @@ public class DebugScreen extends Activity {
 	public String getBot() {
 		return bot;
 	}
+	
+	@Override
+    public void onBackPressed() {
+		AlertDialog.Builder alertBox = new AlertDialog.Builder(this);
+		alertBox.setMessage("Are you sure you want to exit?")
+		       .setCancelable(false)
+		       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		        	   try {
+		        		    PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+		        	        out.println("dbg:" + "000:" + "xxx:" + "EXIT" + "0000" + "0000" + "0000" + "0000" + "100:");
+							socket.close();
+							if(socket.isClosed() == true)
+							{
+							    Toast.makeText(getApplicationContext(), "Socket closed...", Toast.LENGTH_LONG).show();
+							}
+						   }
+			        	   catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						   }
+			        	finish();
+			           }
+		       })
+		       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		       });
+		//AlertDialog alert = builder.create();
+		alertBox.show();
+       return;
+    }
 	
 }
