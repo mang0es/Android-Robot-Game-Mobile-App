@@ -60,8 +60,8 @@ public final class R {
         public static final int Chu=0x7f07002e;
         public static final int Chung=0x7f070030;
         public static final int Cirimele=0x7f070019;
-        public static final int ConfigButton=0x7f07005b;
-        public static final int CreditsButton=0x7f07005c;
+        public static final int ConfigButton=0x7f070068;
+        public static final int CreditsButton=0x7f070069;
         public static final int DanceButton=0x7f070049;
         public static final int Dhaliwal=0x7f07001a;
         public static final int DownArrowButton=0x7f070046;
@@ -76,8 +76,18 @@ public final class R {
         public static final int Hsu=0x7f07001f;
         public static final int Hung=0x7f070020;
         public static final int ImageView01=0x7f070008;
-        public static final int Instructions=0x7f070059;
-        public static final int InstructionsButton=0x7f07005a;
+        public static final int Instr1a=0x7f07005d;
+        public static final int Instr1b=0x7f07005e;
+        public static final int Instr2=0x7f070060;
+        public static final int Instr3a=0x7f070063;
+        public static final int Instr3b=0x7f070064;
+        public static final int Instr4=0x7f070066;
+        public static final int InstrHeader1=0x7f07005c;
+        public static final int InstrHeader2=0x7f07005f;
+        public static final int InstrHeader3a=0x7f070061;
+        public static final int InstrHeader3b=0x7f070062;
+        public static final int InstrHeader4=0x7f070065;
+        public static final int InstructionsButton=0x7f070067;
         public static final int Jones=0x7f070021;
         public static final int Kang=0x7f070022;
         public static final int Keralapura=0x7f07001d;
@@ -107,7 +117,7 @@ public final class R {
         public static final int Wong=0x7f070038;
         public static final int Yu=0x7f07002a;
         public static final int Zoroofchi=0x7f07002b;
-        public static final int banner=0x7f07005d;
+        public static final int banner=0x7f07006a;
         public static final int cancelButton=0x7f070058;
         public static final int debugButton=0x7f070005;
         public static final int eyepee=0x7f07004c;
@@ -115,6 +125,8 @@ public final class R {
         public static final int input1=0x7f070053;
         public static final int input2=0x7f070050;
         public static final int input3=0x7f07004a;
+        public static final int instr=0x7f070059;
+        public static final int instructionbanner=0x7f07005a;
         public static final int ipAddress=0x7f070001;
         public static final int ipAddress_input=0x7f070000;
         public static final int leftRotation=0x7f070056;
@@ -123,7 +135,7 @@ public final class R {
         public static final int moveForward=0x7f07004d;
         public static final int portNumber=0x7f070002;
         public static final int portNumber_input=0x7f070003;
-        public static final int press2continue=0x7f07005e;
+        public static final int press2continue=0x7f07006b;
         public static final int radioBot=0x7f07003e;
         public static final int radioButton1=0x7f07003f;
         public static final int radioButton2=0x7f070040;
@@ -134,11 +146,12 @@ public final class R {
         public static final int sendButton1=0x7f070052;
         public static final int sendButton2=0x7f070051;
         public static final int sendButton3=0x7f07004f;
-        public static final int sendCoordinates=0x7f07005f;
+        public static final int sendCoordinates=0x7f07006c;
         public static final int sendallButton=0x7f07004b;
         public static final int shootLaser=0x7f070054;
         public static final int ssc=0x7f070007;
         public static final int startButton=0x7f070057;
+        public static final int tapToReturn=0x7f07005b;
         public static final int textView=0x7f070004;
     }
     public static final class layout {
@@ -164,6 +177,11 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050001;
+        public static final int configure=0x7f050002;
+        public static final int credits=0x7f050006;
+        public static final int debug=0x7f050003;
         public static final int hello=0x7f050000;
+        public static final int start=0x7f050004;
+        public static final int start2=0x7f050005;
     }
 }

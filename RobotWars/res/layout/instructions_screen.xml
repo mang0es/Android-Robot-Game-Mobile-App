@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-    
-    <ImageView
-        android:id="@+id/ImageView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:src="@drawable/banner2left" />
+    android:layout_height="fill_parent"
+>
     
     
 <ScrollView
@@ -16,26 +11,133 @@
 		android:layout_width="fill_parent" >
 		
     <LinearLayout
-  		android:orientation="vertical"
-  		android:layout_width="wrap_content"
-  		android:layout_height="wrap_content" >
-  		
-    <TextView
-        android:id="@+id/Instructions"
+        android:orientation="vertical"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:id="@+id/instr" >
+
+    <ImageView
+        android:id="@+id/instructionbanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:text="Instructions"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/banner2" />
+
+    <TextView
+        android:id="@+id/tapToReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:textStyle="bold"
+        android:text="TAP ANYWHERE TO RETURN"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+
+
+    <TextView
+        android:id="@+id/InstrHeader1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/configure"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+
+    <TextView
+        android:id="@+id/Instr1a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="- Enter socket information (IP address and Port Number)"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+    
+    <TextView
+        android:id="@+id/Instr1b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="- Choose either Debug or Start Game to connect"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
+    
+    <TextView
+        android:id="@+id/InstrHeader2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/debug"
         android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/Instr2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text="- Test commands"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
     
+    <TextView
+        android:id="@+id/InstrHeader3a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/start"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/InstrHeader3b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/start2"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
     
-    
-    
-    
+    <TextView
+        android:id="@+id/Instr3a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text="- Drag a robot left, right, up or down across the grid"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	<TextView
+        android:id="@+id/Instr3b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text="- Tap a robot to shoot its laser"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/InstrHeader4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/credits"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	<TextView
+        android:id="@+id/Instr4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="- Acknowledgements and recognitions"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </LinearLayout>
-    
-</ScrollView> 
-    
+    </ScrollView>
 </LinearLayout>

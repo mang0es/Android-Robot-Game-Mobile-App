@@ -69,6 +69,7 @@ public class DebugScreen extends Activity {
 	public void RadioButtonListener() {
 		radioGroup = (RadioGroup) findViewById(R.id.radioBot);
 		
+		// LEFT ARROW BUTTON ---------------------------------------------	
 		Button leftButton = (Button) findViewById(R.id.LeftArrowButton);
 		leftButton.setOnClickListener(new OnClickListener() {
 			 
@@ -95,7 +96,7 @@ public class DebugScreen extends Activity {
 		        getRobotID(bot); 
 		        
 		        try {
-					String str = "dbg:" + botID + botColor + "lef:" + "0000" + "0000" + "0000" + "0000" + "100:";
+					String str = "dbg:" + botID + botColor + "lft:" + "0000" + "0000" + "0000" + "0000" + "100:";
 	                PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
 	                out.println(str);
 				} catch (IOException e) {
@@ -105,6 +106,7 @@ public class DebugScreen extends Activity {
 			}
 		});
 		
+		// RIGHT ARROW BUTTON ---------------------------------------------
 		Button rightButton = (Button) findViewById(R.id.RightArrowButton);
 		rightButton.setOnClickListener(new OnClickListener() {
 			 
@@ -140,6 +142,7 @@ public class DebugScreen extends Activity {
 			}
 		});
 		
+		// UP ARROW BUTTON ---------------------------------------------
 		Button forwardButton = (Button) findViewById(R.id.UpArrowButton);
 		forwardButton.setOnClickListener(new OnClickListener() {
 			 
@@ -175,6 +178,7 @@ public class DebugScreen extends Activity {
 			}
 		});
 		
+		// DOWN ARROW BUTTON ---------------------------------------------
 		Button reverseButton = (Button) findViewById(R.id.DownArrowButton);
 		reverseButton.setOnClickListener(new OnClickListener() {
 			 
@@ -210,6 +214,7 @@ public class DebugScreen extends Activity {
 			}
 		});
 		
+		// LASER BUTTON ---------------------------------------------
 		Button laserButton = (Button) findViewById(R.id.LaserButton);
 		laserButton.setOnClickListener(new OnClickListener() {
 			 
@@ -248,6 +253,7 @@ public class DebugScreen extends Activity {
 			}
 		});
 		
+		// DANCE ARROW BUTTON ---------------------------------------------
 		Button danceButton = (Button) findViewById(R.id.DanceButton);
 		danceButton.setOnClickListener(new OnClickListener() {
 			 
@@ -312,6 +318,7 @@ public class DebugScreen extends Activity {
 		return bot;
 	}
 	
+	// BACK BUTTON ---------------------------------------------------
 	@Override
     public void onBackPressed() {
 		AlertDialog.Builder alertBox = new AlertDialog.Builder(this);

@@ -3,5 +3,11 @@
 
     <string name="hello">Hello World, SeniorProject_v2Activity!</string>
     <string name="app_name">Robot Wars!</string>
-
+    
+    <string name="configure">CONFIGURE</string>
+    <string name="debug">-> DEBUG</string>
+    <string name="start">-> START GAME</string>
+    <string name="start2">Use your finger to control a robot\'s movement</string>
+    <string name="credits">CREDITS</string>
+    
 </resources>
